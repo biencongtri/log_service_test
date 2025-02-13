@@ -1,0 +1,42 @@
+1. Lưu log hoạt động của hệ thống
+	+ Các loại log (LogType):
+		- Trace
+		- Debug
+		- Information
+		- Warning
+		- Error
+	+ Cấu trúc:
+		- LogType
+		- Controller
+		- Api
+		- Content
+
+Api: 
+	- CreateLog
+	
+RabbitMQ:
+	- CreateLog
+		
+		
+2. Lưu log người dùng thao tác dữ liệu
+	+ Các loại Action:
+		- CRUD
+	+ Cấu trúc dữ liệu:
+		- Id (bigint)
+		- TableName (nvarchar(150)
+		- ActionId (CRUD)
+		- IpAddress (nvarchar)
+		- ObjectId  nvarchar(50)
+		- ObjectDataOld (json)
+		- ObjectDataNew (json)
+		- Modified (datetime)
+		- ModifiedBy (bigint)
+		- ModifiedByInstanceId (GUID)
+	
+Api:
+	- CreateLog
+	- Paging (TableName, ActionId, ModifiedBy, ModifiedByInstanceId, PageIndex, PageSize)
+	
+RabbitMQ:
+	- CreateLog
+		
